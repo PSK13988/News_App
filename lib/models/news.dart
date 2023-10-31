@@ -1,9 +1,3 @@
-import 'dart:convert';
-
-NewsData newsDataFromJson(String str) => NewsData.fromJson(json.decode(str));
-
-String newsDataToJson(NewsData data) => json.encode(data.toJson());
-
 class NewsData {
   List<News> data;
 
@@ -14,10 +8,6 @@ class NewsData {
   factory NewsData.fromJson(Map<String, dynamic> json) => NewsData(
         data: List<News>.from(json["data"].map((x) => News.fromJson(x))),
       );
-
-  Map<String, dynamic> toJson() => {
-        "data": List<dynamic>.from(data.map((x) => x.toJson())),
-      };
 }
 
 class News {
