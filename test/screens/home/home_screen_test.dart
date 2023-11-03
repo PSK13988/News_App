@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
@@ -15,7 +16,7 @@ void main() {
     final controller = Get.put(
       HomeController(
         ApiRepositoryImpl(
-          ApiServiceImpl(),
+          ApiServiceImpl(Dio()),
         ),
       ),
     );
@@ -29,7 +30,7 @@ void main() {
     final controller = Get.put(
       HomeController(
         ApiRepositoryImpl(
-          ApiServiceImpl(),
+          ApiServiceImpl(Dio()),
         ),
       ),
     );

@@ -3,7 +3,9 @@ import 'package:dio/dio.dart';
 const baseUrl = 'https://api.thenewsapi.com/v1';
 
 class ApiServiceImpl {
-  final Dio dio = Dio();
+  const ApiServiceImpl(this.dio);
+
+  final Dio dio;
 
   Future<Response<dynamic>> getTopNews({
     required String token,

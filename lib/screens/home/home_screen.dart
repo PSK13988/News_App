@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:styli/apis/repository/api_repository.dart';
@@ -20,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final controller = Get.put(
     HomeController(
       ApiRepositoryImpl(
-        ApiServiceImpl(),
+        ApiServiceImpl(Dio()),
       ),
     ),
   );
